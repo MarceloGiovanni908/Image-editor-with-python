@@ -1,0 +1,91 @@
+Berikut adalah alur dari program kami               
+
++----------------------+
+               | Start                |
+               +----------------------+
+                          |
+                          |
+                          V
+             +----------------------------+
+             | Import Button Clicked      |
+             +----------------------------+
+                          |
+                          |
+                          V
+            +-----------------------------+
+            | Open File Dialog            |
+            +-----------------------------+
+                          |
+                          |
+                          V
+            +-----------------------------+
+            | Display Imported Image      |
+            +-----------------------------+
+                          |
+                          |
+                          V
+             +----------------------+
+             | Save Button Clicked  |
+             +----------------------+
+                          |
+                          |
+                          V
+            +-----------------------------+
+            | Open Save File Dialog       |
+            +-----------------------------+
+                          |
+                          |
+                          V
+            +-----------------------------+
+            | Save Modified Image         |
+            +-----------------------------+
+                          |
+                          |
+                          V
+        +-----------------------------------+
+        | Close Button Clicked              |
+        +-----------------------------------+
+                          |
+                          |
+                          V
+      +---------------------------------------+
+      | End                                   |
+      +---------------------------------------+
+
+Impor modul dan pustaka yang diperlukan: tkinter, PIL, cv2, dan numpy.
+
+Tentukan fungsi panggilan kembali (callback) untuk berbagai filter dan penyempurnaan gambar:
+
+yellowButton_callback(): Mengatur saluran biru menjadi 20, memberikan efek filter kuning.
+cyanButton_callback(): Mengatur saluran biru menjadi 0, memberikan efek filter cyan.
+pinkButton_callback(): Mengatur saluran biru menjadi 255 dan saluran merah menjadi 255, memberikan efek filter pink.
+blueButton_callback(): Mengatur saluran biru menjadi 255, memberikan efek filter biru.
+brightness_callback(brightness_pos): Menyesuaikan kecerahan gambar menggunakan metode enhance() dari kelas ImageEnhance milik PIL.
+contrast_callback(contrast_pos): Menyesuaikan kontras gambar menggunakan metode enhance() dari kelas ImageEnhance milik PIL.
+color_callback(color_pos): Menyesuaikan saturasi warna gambar menggunakan metode enhance() dari kelas ImageEnhance milik PIL.
+sepiaButton_callback(): Menggunakan efek filter sepia pada gambar dengan mengonversi saluran warna.
+Tentukan fungsi displayImage() tambahan:
+
+Menyesuaikan ukuran gambar masukan menjadi ukuran tetap (800x500 piksel) menggunakan metode resize() dari PIL.
+Mengonversi gambar yang diubah ukurannya menjadi format yang kompatibel dengan Tkinter menggunakan ImageTk.PhotoImage().
+Mengatur label showWindow untuk menampilkan gambar yang telah diubah ukurannya.
+Tentukan fungsi panggilan kembali (callback) tambahan:
+
+importButton_callback(): Meminta pengguna untuk memilih file gambar menggunakan dialog file dan membukanya menggunakan metode Image.open() milik PIL.
+saveButton_callback(): Meminta pengguna untuk memilih nama file dan menyimpan gambar keluaran menggunakan metode save() milik PIL.
+closeButton_callback(): Menutup jendela aplikasi.
+Buat jendela aplikasi utama menggunakan tkinter.Tk(), atur judul dan ukurannya.
+
+Buat frame untuk mengorganisir widget dalam jendela.
+
+Buat label dan tombol menggunakan tkinter.Label dan tkinter.Button secara berturut-turut, dan masukkan ke dalam frame.
+
+Buat skala kustom (slider) menggunakan ttk.Scale untuk mengontrol kecerahan, kontras, dan saturasi warna gambar. Atur nilai awal dan masukkan ke dalam frame.
+
+Buat tombol radio untuk berbagai pilihan filter, seperti kuning, cyan, pink, biru, dan sepia. Masukkan ke dalam frame.
+
+Buat label showWindow untuk menampilkan gambar. Masukkan ke dalam jendela utama.
+
+Mulai loop acara Tkinter menggunakan tkinter.mainloop(), yang menjaga jendela tetap terbuka dan menangani interaksi pengguna.
+
+Itulah alur keseluruhan dari program ini. Pengguna dapat mengimpor gambar, menerapkan berbagai filter, menyesuaikan kecerahan/kontras/saturasi, menyimpan gambar yang telah dimodifikasi, atau menutup aplikasi. Gambar yang ditampilkan diperbarui secara real-time berdasarkan pilihan pengguna.
